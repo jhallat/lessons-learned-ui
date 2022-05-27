@@ -1,6 +1,6 @@
 export class Beer {
   brandName: string = "";
-  type: string = "";
+  style: string = "";
   description: string = "";
   rating: number = 0;
 }

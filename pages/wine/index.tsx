@@ -48,7 +48,6 @@ const WinePage = () => {
   };
 
   const handleEdit = (id) => {
-    console.log("edit " + id);
     router.push(`/wine/update/${id}`);
   };
 

@@ -1,39 +1,39 @@
 import Layout from "../../../components/Layout";
 import { useEffect, useState } from "react";
-import { Wine } from "../../../models/wine";
+import { Beer } from "../../../models/beer";
 import axios from "axios";
 import { useRouter } from "next/router";
-import WineForm from "../../../components/WineForm";
+import BeerForm from "../../../components/BeerForm";
 
-const UpdateWinePage = () => {
+const UpdateBeerPage = () => {
   const router = useRouter();
 
-  const [wine, setWine] = useState(new Wine());
+  const [beer, setBeer] = useState(new Beer());
 
   useEffect(() => {
     const { id } = router.query;
     const fetchData = async () => {
-      const response = await axios.get(`http://localhost:4000/api/wine/${id}`);
-      setWine(response.data);
+      const response = await axios.get(`http://localhost:4000/api/beer/${id}`);
+      setBeer(response.data);
     };
     fetchData();
   }, []);
 
-  const handleUpdate = (wine) => {
+  const handleUpdate = (beer) => {
     axios
-      .put(`http://localhost:4000/api/wine/${wine.key}`, wine)
-      .then(() => router.push("/wine"))
+      .put(`http://localhost:4000/api/beer/${beer.key}`, beer)
+      .then(() => router.push("/beer"))
       .catch((reason) => console.log(reason));
   };
 
   const handleCancel = () => {
-    router.push("/wine");
+    router.push("/beer");
   };
 
   return (
     <Layout>
-      <WineForm
-        wine={wine}
+      <BeerForm
+        beer={beer}
         action="Update"
         onAction={handleUpdate}
         onCancel={handleCancel}
@@ -42,4 +42,4 @@ const UpdateWinePage = () => {
   );
 };
 
-export default UpdateWinePage;
+export default UpdateBeerPage;

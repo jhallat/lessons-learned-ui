@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
       <AppBar position="sticky">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <StyledHeading>Lessons Learned</StyledHeading>
+            <StyledHeading>Inner Critic</StyledHeading>
             <ButtonBar>
               <Button
                 sx={{
@@ -78,6 +78,26 @@ const Layout = ({ children }) => {
                 }}
               >
                 Hiking
+              </Button>
+              <Button
+                sx={{
+                  my: 2,
+                  background: "transparent",
+                  color: "white",
+                  display: "block",
+                }}
+              >
+                Coffee
+              </Button>
+              <Button
+                sx={{
+                  my: 2,
+                  background: "transparent",
+                  color: "white",
+                  display: "block",
+                }}
+              >
+                Destinations
               </Button>
             </ButtonBar>
           </Toolbar>

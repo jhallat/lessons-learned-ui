@@ -5,7 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 interface BeerItemProps {
   id: string;
   brandName: string;
-  type: string;
+  style: string;
   description: string;
   rating: number;
   onEdit?: (string) => void;
@@ -19,7 +19,7 @@ const containerStyle = {
 const BeerItem = ({
   id,
   brandName,
-  type,
+  style,
   description,
   rating,
   onEdit,
@@ -61,7 +61,7 @@ const BeerItem = ({
           <Rating value={rating} readOnly />
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6">{type}</Typography>
+          <Typography variant="h6">{style}</Typography>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="body1">{description}</Typography>
