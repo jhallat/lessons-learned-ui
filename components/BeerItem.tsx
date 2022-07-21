@@ -4,6 +4,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 interface BeerItemProps {
   id: string;
+  brewer: string;
   brandName: string;
   style: string;
   description: string;
@@ -18,6 +19,7 @@ const containerStyle = {
 
 const BeerItem = ({
   id,
+  brewer,
   brandName,
   style,
   description,
@@ -41,7 +43,7 @@ const BeerItem = ({
     <Paper sx={containerStyle}>
       <Grid container spacing={0.5}>
         <Grid item xs={11}>
-          <Typography variant="h5">{brandName}</Typography>
+          <Typography variant="h5">{`${brewer} ${brandName}`}</Typography>
         </Grid>
         <Grid item xs={1}>
           <Grid container>

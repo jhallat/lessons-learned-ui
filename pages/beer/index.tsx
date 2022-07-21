@@ -52,6 +52,7 @@ const BeerPage = () => {
           <BeerItem
             key={beer.key}
             id={beer.key}
+            brewer={beer.brewer}
             brandName={beer.brandName}
             style={beer.style}
             description={beer.description}

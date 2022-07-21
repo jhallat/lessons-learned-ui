@@ -28,6 +28,10 @@ const BeerForm = ({ beer, action, onAction, onCancel }: BeerFormProps) => {
     setActionBeer(beer);
   }, [beer]);
 
+  const handleBrewerChange = (event) => {
+    setActionBeer({ ...actionBeer, brewer: event.target.value });
+  };
+
   const handleBrandNameChange = (event) => {
     setActionBeer({ ...actionBeer, brandName: event.target.value });
   };
@@ -63,6 +67,14 @@ const BeerForm = ({ beer, action, onAction, onCancel }: BeerFormProps) => {
           <Typography sx={{ bottomPadding: "15px" }} variant="h5">
             {`${action} Wine`}
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            fullWidth
+            label="Brewer"
+            value={actionBeer.brewer}
+            onChange={handleBrewerChange}
+          />
         </Grid>
         <Grid item xs={12}>
           <TextField

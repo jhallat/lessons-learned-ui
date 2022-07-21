@@ -20,6 +20,7 @@ const UpdateBeerPage = () => {
   }, []);
 
   const handleUpdate = (beer) => {
+    console.log(beer);
     axios
       .put(`http://localhost:4000/api/beer/${beer.key}`, beer)
       .then(() => router.push("/beer"))
